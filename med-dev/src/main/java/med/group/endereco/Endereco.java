@@ -19,4 +19,7 @@ public class Endereco {
     private String complemento;
     private  String cidade;
     private String UF;
+
+    public Endereco(DadosEndereco endereco) {
+    }
 }
