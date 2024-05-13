@@ -6,9 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.group.endereco.Endereco;
-import med.group.medicos.DadosCadastroMedico;
-import med.group.medicos.Especialidade;
-
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
@@ -40,5 +37,6 @@ public class Medico {
         this.crm = dados.crm();
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
+        
     }
 }
