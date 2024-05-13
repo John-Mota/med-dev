@@ -1,6 +1,8 @@
 package med.group.endereco;
 
 import jakarta.persistence.Embeddable;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -12,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Endereco {
 
+   
     private String logradouro;
     private String bairro;
     private String cep;
@@ -19,4 +22,14 @@ public class Endereco {
     private String complemento;
     private  String cidade;
     private String UF;
+
+    public Endereco(DadosEndereco dados) {
+        this.logradouro = dados.logradouro();
+        this.bairro = dados.bairro();
+        this.cep = dados.cep();
+        this.complemento = dados.complemento();
+        this.cidade = dados.cidade();
+        this.UF = dados.uf();
+        this.numero = dados.numero();
+    }
 }
