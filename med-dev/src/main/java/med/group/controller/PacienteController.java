@@ -1,7 +1,14 @@
 package med.group.controller;
 
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
+import med.group.pacientes.DadosAtualizacaoPaciente;
+import med.group.pacientes.DadosCadastroPaciente;
+import med.group.pacientes.DadosListagemPaciente;
+import med.group.pacientes.Paciente;
+import med.group.pacientes.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +18,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("pacientes")
-public class Paciente {
+public class PacienteController {
+
   @Autowired
   private PacienteRepository repository;
 
